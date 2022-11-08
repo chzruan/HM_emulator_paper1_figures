@@ -57,6 +57,8 @@ with h5py.File(f"./data/conc_Rmin.hdf5", 'r') as cr_file:
             lm = np.linspace(11.5, 14.8, 50).reshape(-1, 1)
             log10c_pred = model.predict(lm)
             power_law_idx = model.coef_[0]
+            amp = model.intercept_
+
             ax0.plot(
                 lm,
                 log10c_pred,
@@ -74,8 +76,8 @@ with h5py.File(f"./data/conc_Rmin.hdf5", 'r') as cr_file:
             )
             ax0.text(
                 12.2, 
-                model.predict(np.array([12.77]).reshape(-1, 1)),
-                r"$\displaystyle \mathrm{fit}: c \propto M^{" + f"{power_law_idx:.3f}" + "}$",
+                model.predict(np.array([12.9]).reshape(-1, 1)),
+                r"$\displaystyle \mathrm{fit}: c \propto " + f"{amp:.2f}" + " M^{" + f"{power_law_idx:.3f}" + "}$",
                 color='k',
                 bbox=props,
                 rotation=360-48,
