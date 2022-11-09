@@ -13,7 +13,7 @@ matplotlib.rcParams['text.latex.preamble'] = r'\usepackage{physics}'
 params = {'xtick.top': True, 'ytick.right': True, 'xtick.direction': 'in', 'ytick.direction': 'in'}
 plt.rcParams.update(params)
 from cycler import cycler
-custom_cycler = (cycler(color=['lightseagreen', 'orange', 'red', 'mediumblue', 'darkviolet', 'green',  'magenta', 'black']))
+custom_cycler = (cycler(color=['lightseagreen', 'orange', 'red', 'darkviolet', 'mediumblue', 'green',  'magenta', 'black']))
 from matplotlib.ticker import ScalarFormatter
 from matplotlib import ticker
 
@@ -65,19 +65,20 @@ with h5py.File(f"./data/conc_Rmin.hdf5", 'r') as cr_file:
                 linewidth=5.5,
                 linestyle="solid",
                 color=pp[0].get_color(),
-                alpha=0.3,
+                alpha=0.18,
             )
 
             props = dict(
                 boxstyle='round', 
                 facecolor=pp[0].get_color(), 
-                edgecolor=pp[0].get_color(), 
+                edgecolor=pp[0].get_color(),
+                linewidth=0, 
                 alpha=0.2,
             )
             ax0.text(
-                12.2, 
-                model.predict(np.array([12.9]).reshape(-1, 1)),
-                r"$\displaystyle \mathrm{fit}: c \propto " + f"{amp:.2f}" + " M^{" + f"{power_law_idx:.3f}" + "}$",
+                12.0 + jj/40, 
+                model.predict(np.array([12.0 + jj/40 + 0.70]).reshape(-1, 1)),
+                r"$\displaystyle \mathrm{fit}: c = " + f"{amp:.2f}" + " M^{" + f"{power_law_idx:.3f}" + "}$",
                 color='k',
                 bbox=props,
                 rotation=360-48,
@@ -99,7 +100,7 @@ with h5py.File(f"./data/conc_Rmin.hdf5", 'r') as cr_file:
     )
     ax0.text(
         np.log10(MassResolution * 800) - 0.30,
-        0.57,
+        0.55,
         r"$\displaystyle 800 \times m_{\mathrm{particle}}^{L200}$",
     )
 
@@ -133,7 +134,7 @@ with h5py.File(f"./data/conc_Rmin.hdf5", 'r') as cr_file:
     )
     ax0.text(
         np.log10(MassResolution * 800) - 0.30,
-        0.57,
+        0.55,
         r"$\displaystyle 800 \times m_{\mathrm{particle}}^{L500}$",
     )
 
@@ -170,7 +171,7 @@ with h5py.File(f"./data/conc_Rmin.hdf5", 'r') as cr_file:
     )
     ax0.text(
         np.log10(MassResolution * 800) - 0.30,
-        0.57,
+        0.55,
         r"$\displaystyle 800 \times m_{\mathrm{particle}}^{L1000}$",
     )
 
