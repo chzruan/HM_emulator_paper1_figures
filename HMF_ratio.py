@@ -12,8 +12,6 @@ matplotlib.rcParams['text.latex.preamble'] = r'\usepackage{amsmath}'
 matplotlib.rcParams['text.latex.preamble'] = r'\usepackage{physics}'
 params = {'xtick.top': True, 'ytick.right': True, 'xtick.direction': 'in', 'ytick.direction': 'in'}
 plt.rcParams.update(params)
-import matplotlib.cm as cm
-rainbow_colors = cm.winter(np.linspace(0, 1, 49))
 
 from hmf import cosmo
 import hmf 
@@ -21,10 +19,15 @@ from scipy.interpolate import InterpolatedUnivariateSpline as ius
 
 
 
+
 fig = plt.figure(figsize=(5, 3.6))
 gs = gridspec.GridSpec(1, 1,)
 ax0 = plt.subplot(gs[0])
 ax0.set_xscale("log")
+
+from cycler import cycler
+custom_cycler = (cycler(color=['r', 'k',]))
+ax0.set_prop_cycle(custom_cycler)
 
 with h5py.File(f"./data/HMF_fR_z0.00.hdf5", 'r') as hmf_file:
     for node_id in range(1, 50):
@@ -60,8 +63,8 @@ with h5py.File(f"./data/HMF_fR_z0.00.hdf5", 'r') as hmf_file:
         ax0.plot(
             10.0**group_1node["log10M_bin_leftedge"][...],
             cHMF_ratio,
-            lw=1.0,
-            color=rainbow_colors[node_id-1],
+            lw=0.8,
+            alpha=0.6,
         )
 
 ax0.set_xlabel(
