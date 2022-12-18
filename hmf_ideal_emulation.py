@@ -279,15 +279,15 @@ with h5py.File(
         10**log10M,
         np.ones_like(10**log10M) * 1e-3,
         linewidth=0.8,
-        linestyle="--",
-        color='gray',
+        linestyle="-.",
+        color='r',
     )
     ax1.plot(
         10**log10M,
         np.ones_like(10**log10M) * 1e-2,
         linewidth=0.8,
-        linestyle="--",
-        color='gray',
+        linestyle="-.",
+        color='r',
     )
 
     ax0.set_xlim([1e12, 1e16])
