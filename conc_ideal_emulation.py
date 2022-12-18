@@ -181,19 +181,6 @@ with h5py.File(
     err_median = np.median(err_all, axis=0,)
     err_2 = np.percentile(err_all, q=90, axis=0,)
 
-    # ax1.errorbar(
-    #     10**log10M,
-    #     err_median,
-    #     yerr=(err_2 - err_median),
-    #     marker='s',
-    #     markersize=3,
-    #     lw=2.0,
-    #     capsize=2.5,
-    #     color='lightseagreen',
-    #     zorder=98,
-    #     alpha=0.7,
-    #     label=r'$\mathrm{test}$',
-    # )
     ax1.plot(
         10**log10M,
         err_median,
@@ -271,21 +258,6 @@ with h5py.File(
     err_mean = np.mean(err_all, axis=0,)
     err_median = np.median(err_all, axis=0,)
     err_2 = np.percentile(err_all, q=90, axis=0,)
-
-    # ax1.errorbar(
-    #     10**log10M,
-    #     err_median,
-    #     yerr=(err_2 - err_median),
-    #     marker='s',
-    #     markersize=3,
-    #     lw=2.0,
-    #     elinewidth=3.5,
-    #     capsize=3.5,
-    #     color='mediumblue',
-    #     zorder=100,
-    #     alpha=0.6,
-    #     label=r'$\mathrm{test, inner}\,50\%$',
-    # )
 
     ax1.plot(
         10**log10M,
