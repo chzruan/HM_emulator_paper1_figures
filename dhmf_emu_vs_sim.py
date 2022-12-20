@@ -168,7 +168,7 @@ props = dict(
 )
 ax00.text(
     2e13, 
-    3e-3,
+    5e-3,
     r"$\displaystyle \Lambda\mathrm{CDM}$",
     color='r',
     bbox=props,
@@ -315,7 +315,7 @@ props = dict(
 
 ax01.text(
     1.2e13, 
-    3e-3,
+    5e-3,
     r"$\displaystyle f(R)\,\mathrm{gravity}$",
     color='lightseagreen',
     bbox=props,
@@ -459,7 +459,7 @@ props = dict(
 
 ax02.text(
     2e13, 
-    3e-3,
+    5e-3,
     r"$\displaystyle \mathrm{DGP}$",
     color='orange',
     bbox=props,
@@ -543,19 +543,19 @@ if fmt:
     )
 
 
-    ax00.set_xlim([6e11, 1.2e14])
-    ax00.set_ylim([9e-6, 2e-2])
-    ax10.set_xlim([6e11, 1.2e14])
+    ax00.set_xlim([7e11, 1.2e14])
+    ax00.set_ylim([9e-6, 2.4e-2])
+    ax10.set_xlim([7e11, 1.2e14])
     ax10.set_ylim([-0.053, 0.053])
 
-    ax01.set_xlim([6e11, 1.2e14])
-    ax01.set_ylim([9e-6, 2e-2])
-    ax11.set_xlim([6e11, 1.2e14])
+    ax01.set_xlim([7e11, 1.2e14])
+    ax01.set_ylim([9e-6, 2.4e-2])
+    ax11.set_xlim([7e11, 1.2e14])
     ax11.set_ylim([-0.053, 0.053])
 
-    ax02.set_xlim([6e11, 1.2e14])
-    ax02.set_ylim([9e-6, 2e-2])
-    ax12.set_xlim([6e11, 1.2e14])
+    ax02.set_xlim([7e11, 1.2e14])
+    ax02.set_ylim([9e-6, 2.4e-2])
+    ax12.set_xlim([7e11, 1.2e14])
     ax12.set_ylim([-0.053, 0.053])
 
     ax10.set_xlabel(
@@ -577,7 +577,7 @@ if fmt:
     )
     ax00.set_ylabel(
         r'$\displaystyle \dd{n}_{\mathrm{h}} / \dd{\log_{10} M_{\mathrm{200c}}}$',
-        fontsize=20,
+        fontsize=24,
     )
     ax00.legend(
         fontsize=16,
