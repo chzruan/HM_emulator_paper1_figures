@@ -50,7 +50,7 @@ p_gg = ax0.errorbar(
     yerr=r_sim[:idx_r2xi_min]**2 * xi_gg_sim_stddev[:idx_r2xi_min],
     color='k',
     label=r"$\xi_{\mathrm{gg}}^{\mathrm{simulation}}$",
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3.5,
     marker='s',
@@ -61,7 +61,7 @@ ax0.errorbar(
     r_sim[idx_r2xi_min:]**2 * xi_gg_sim_mean[idx_r2xi_min:],
     yerr=r_sim[idx_r2xi_min:]**2 * xi_gg_sim_stddev[idx_r2xi_min:],
     color='k',
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3.5,
     marker='s',
@@ -78,7 +78,7 @@ p_cc = ax0.errorbar(
     r_sim[:idx_r2xi_min]**2 * (xi_cc_sim_mean[:idx_r2xi_min] * n_c**2/n_g**2),
     yerr=r_sim[:idx_r2xi_min]**2 * (xi_cc_sim_stddev[:idx_r2xi_min] * n_c**2/n_g**2),
     label=r"$\xi_{\mathrm{cc}}^{\mathrm{simulation}}$",
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3,
     marker='o',
@@ -88,7 +88,7 @@ ax0.errorbar(
     r_sim[idx_r2xi_min:],
     r_sim[idx_r2xi_min:]**2 * (xi_cc_sim_mean[idx_r2xi_min:] * n_c**2/n_g**2),
     yerr=r_sim[idx_r2xi_min:]**2 * (xi_cc_sim_stddev[idx_r2xi_min:] * n_c**2/n_g**2),
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3,
     marker='o',
@@ -105,7 +105,7 @@ p_cs = ax0.errorbar(
     r_sim[:idx_r2xi_min]**2 * (xi_cs_sim_mean[:idx_r2xi_min] * n_c*n_s/n_g**2),
     yerr=r_sim[:idx_r2xi_min]**2 * (xi_cs_sim_stddev[:idx_r2xi_min] * n_c*n_s/n_g**2),
     label=r"$\xi_{\mathrm{cs}}^{\mathrm{simulation}}$",
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3,
     marker='v',
@@ -115,7 +115,7 @@ ax0.errorbar(
     r_sim[idx_r2xi_min:],
     r_sim[idx_r2xi_min:]**2 * (xi_cs_sim_mean[idx_r2xi_min:] * n_c*n_s/n_g**2),
     yerr=r_sim[idx_r2xi_min:]**2 * (xi_cs_sim_stddev[idx_r2xi_min:] * n_c*n_s/n_g**2),
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3,
     marker='v',
@@ -133,7 +133,7 @@ p_ss = ax0.errorbar(
     r_sim[:idx_r2xi_min]**2 * (xi_ss_sim_mean[:idx_r2xi_min] * n_s**2/n_g**2),
     yerr=r_sim[:idx_r2xi_min]**2 * (xi_ss_sim_stddev[:idx_r2xi_min] * n_s**2/n_g**2),
     label=r"$\xi_{\mathrm{ss}}^{\mathrm{simulation}}$",
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3.5,
     marker='X',
@@ -143,8 +143,7 @@ ax0.errorbar(
     r_sim[idx_r2xi_min:],
     r_sim[idx_r2xi_min:]**2 * (xi_ss_sim_mean[idx_r2xi_min:] * n_s**2/n_g**2),
     yerr=r_sim[idx_r2xi_min:]**2 * (xi_ss_sim_stddev[idx_r2xi_min:] * n_s**2/n_g**2),
-    label=r"$\xi_{\mathrm{ss}}^{\mathrm{simulation}}$",
-    lw=0.0,
+    lw=0.0, elinewidth=1.0,
     linestyle="--",
     markersize=3.5,
     marker='X',
@@ -261,7 +260,7 @@ ax1.set_xlabel(r"$\displaystyle r / (h^{-1}\mathrm{Mpc})$", fontsize=16,)
 ax0.set_ylabel(r"$\displaystyle r^2 \xi_{\mathrm{gg}}(r)$", fontsize=18,)
 ax1.set_ylabel(r"$\displaystyle \Delta\xi / \xi^{\mathrm{sim}}$", fontsize=12,)
 
-ax0.legend(frameon=False, fontsize=10, ncol=1, loc="lower left",)
+ax0.legend(frameon=False, fontsize=11, ncol=1, loc="lower left",)
 ax1.legend(frameon=False, fontsize=12, ncol=1,)
 
 plt.savefig(
