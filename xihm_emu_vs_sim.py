@@ -13,7 +13,7 @@ matplotlib.rcParams['text.latex.preamble'] = r'\usepackage{physics}'
 params = {'xtick.top': True, 'ytick.right': True, 'xtick.direction': 'in', 'ytick.direction': 'in'}
 plt.rcParams.update(params)
 from cycler import cycler
-custom_cycler = (cycler(color=["lightseagreen", "orange", "red", 'mediumblue', 'purple', 'mediumseagreen', 'magenta',]))
+custom_cycler = (cycler(color=["red", "lightseagreen", "orange",  'mediumblue', 'purple', 'mediumseagreen', 'magenta',]))
 
 
 log10nh_all = [-3.50,]
@@ -206,7 +206,7 @@ ax1.set_ylim([-0.024, 0.024])
 
 ax1.set_xlabel(
     r"$\displaystyle r / (h^{-1}\mathrm{Mpc})$",
-    fontsize=13,
+    fontsize=15,
 )
 ax0.set_ylabel(
     r"$r^2 \xi_{\mathrm{hm}} (r | n_{\mathrm{h}} = 10^{-3.5})$",
